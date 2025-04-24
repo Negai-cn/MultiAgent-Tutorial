@@ -13,13 +13,11 @@ from dotenv import load_dotenv
 包括大模型对话节点
 """
 load_dotenv(".env")
-model_name = os.environ.get("model_name")
-base_url = os.environ.get("base_url")
-api_key = os.environ.get("api_key")
 
 def get_chat_model(temperature=0.8, top_p=0.9):
-    base_url = base_url
-    api_key = api_key
+    model_name = os.environ.get("model_name")
+    base_url = os.environ.get("base_url")
+    api_key = os.environ.get("api_key")
     chat_model = ChatOpenAI(
         model=model_name,
         base_url=base_url,
